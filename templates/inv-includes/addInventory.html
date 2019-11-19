@@ -1,0 +1,58 @@
+<!-- Modal -->
+<div class="modal fade" id="addInventory" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Add Inventory</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/inv" method="post">
+                    <div class="form-group">
+                        <label for="inventoryNameInput">Name</label>
+                        <input name="name" type="text" class="form-control" id="inventoryNameInput"
+                               placeholder="Enter inventory name">
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select name="type" class="form-control" id="type">
+                            <option value="product">Product</option>
+                            <option value="service">Service</option>
+                        </select>
+                        <div class="form-group">
+                            <label for="buyingprice">Buying Price</label>
+                            <input name="bp" type="text" class="form-control" id="buyingprice"
+                                   placeholder="Enter buying price">
+                        </div>
+                        <div class="form-group">
+                            <label for="sellingprice">Selling Price</label>
+                            <input name="sp" type="text" class="form-control" id="sellingprice"
+                                   placeholder="Enter selling price">
+                        </div>
+                        <div class="form-group">
+                            <label for="stock">Stock</label>
+                            <input name="stock" type="text" class="form-control" id="stock"
+                                   placeholder="Enter stock">
+                        </div>
+                        <div class="form-group">
+                            <label for="reorder">reorder Point</label>
+                            <input name="rp" type="text" class="form-control" id="reorder"
+                                   placeholder="Enter stock">
+                        </div>
+                    </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">submit</button>
+            </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>

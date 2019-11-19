@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div class="modal fade" id="makesale_{{ item.id }}" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Record {{ item.id }}
+                    : {{ item.invname }} {{ item.invtype }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/sales" method="post">
+                    <div class="form-group">
+                        <input name="inventory_id" type="hidden" class="form-control" id="inventory_id"
+                               placeholder="Enter inventory name" value="{{ item.id }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input name="qty" type="text" class="form-control" id="qty"
+                               placeholder="Enter quantity">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">submit</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>

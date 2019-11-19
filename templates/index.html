@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock title %}
+{% block content %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h4 class="display-4">Inventory Management</h4>
+            <p class="lead">This is an inventory management system developed for the purposes of testing flask</p>
+        </div>
+    </div>
+    <div class="container" align="left">
+        <embed type="image/svg+xml" src={{ pietype|safe }} style='max-width:800px'/>
+    </div>
+{#
+create a line graph showing total sales on a daily chart
+        - start with daily
+        - then do weekly
+        - then do monthly
+#}
+{% endblock content %}
+
+

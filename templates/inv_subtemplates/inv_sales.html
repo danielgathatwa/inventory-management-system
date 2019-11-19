@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}{{ inv.invname }} {{ inv.type }} Sales{% endblock title %}
+{% block content %}
+    {% include 'inv-includes/alert.html' %}
+    <div class="jumbotron w-75 h-75 mx-auto my-auto">
+
+            <button class="btn btn-info">
+                <a class="text-white" href="/inv">go back</a>
+            </button>
+
+             {{ inv.invname }} {{ inv.type }} Sales
+        <hr>
+        <table class="table table-light table-striped myTable">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">date</th>
+                <th scope="col">Transaction ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Unit Cost</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for sl in sls %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ sl.created_at }}</td>
+                    <td>{{ sl.id }}</td>
+                    <td>{{ inv.invname }}</td>
+                    <td>{{ inv.invtype }}</td>
+                    <td>{{ inv.sp }}</td>
+                    <td>{{ sl.qty }}</td>
+                    <td> {{ inv.sp * sl.qty }} </td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Total Sales{% endblock title %}
+{% block content %}
+    <div class="jumbotron w-75 h-75 mx-auto my-auto">
+        <table class="table table-light table-striped myTable">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Transaction ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Unit Cost</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for sl in sls %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ sl.created_at }}</td>
+                    <td>{{ sl.id }}</td>
+                    <td>{{ sl.invname }}</td>
+                    <td>{{ sl.invtype }}</td>
+                    <td>{{ sl.sp }}</td>
+                    <td>{{ sl.qty }}</td>
+                    <td>{{ sl.sp* sl.qty }}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

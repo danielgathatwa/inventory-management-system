@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Charting{% endblock title %}
+{% block content %}
+    <div class="row">
+        <div class="m-4 w-25">
+            <form action="/charting" method="post">
+                <label for="type">Select year of interest</label>
+                <select name="year" class="form-control" id="type">
+                    <option value="2015">Year 2015</option>
+                    <option value="2016">Year 2016</option>
+                    <option value="2017">Year 2017</option>
+                    <option value="2018">Year 2018</option>
+                    <option value="2019">Year 2019</option>
+                </select>
+                <label for="type">Select Type of Chart</label>
+                <select name="chart_type" class="form-control" id="type">
+                    <option value="Bar">Bar Chart</option>
+                    <option value="Line" selected>Line Chart</option>
+                    <option value="Pie">Pie Chart</option>
+                </select>
+                <button type="submit" class="btn btn-success">submit</button>
+            </form>
+        </div>
+        <div class="container w-50" align="left">
+            <embed type="image/svg+xml" src={{ linetype_date|safe }} style='max-width:900px'/>
+        </div>
+    </div>
+{% endblock %}

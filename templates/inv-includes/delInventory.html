@@ -1,0 +1,38 @@
+<!-- Modal -->
+<div class="modal fade" id="delete_{{ item.id }}" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="exampleModalScrollableTitle">Delete Record {{ item.id }}
+                    : {{ item.invname }} {{ item.invtype }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/del-inv" method="post">
+                    <div class="form-group">
+                        <input name="inventory_id" type="hidden" class="form-control" id="inventory_id"
+                               placeholder="Enter inventory name" value="{{ item.id }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inventoryNameInput" class="text-danger h6">Are you sure you want to delete the
+                            record?</label>
+                        <select name="delete" class="form-control" id="type">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">submit</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>

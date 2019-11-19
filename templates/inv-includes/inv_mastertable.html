@@ -1,0 +1,56 @@
+<table class="table table-striped myTable">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Buying price</th>
+        <th scope="col">Selling price</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Reorder point</th>
+        <th scope="col">View Sales</th>
+        <th scope="col">Edit Record</th>
+        <th scope="col">Make Sale</th>
+        <th scope="col">Delete Record</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in invs %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.invname }}</td>
+            <td>{{ item.invtype }}</td>
+            <td>${{ item.bp }}</td>
+            <td>${{ item.sp }}</td>
+            <td>{{ item.stock }}</td>
+            <td>{{ item.rp }}</td>
+            <td>
+                <a class="text-success" href="/sales_view/{{ item.id }}">View Sales</a>
+
+            </td>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="modal"
+                        data-target="#edit_{{ item.id }}">Edit record
+                </button>
+                {% include 'inv-includes/editrecord.html' %}
+            </td>
+            <td>
+                <button type="button" class="btn btn-warning text-white" data-toggle="modal"
+                        data-target="#makesale_{{ item.id }}">Make Sale
+                </button>
+                {% include 'inv-includes/makesale.html' %}
+
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger text-white" data-toggle="modal"
+                        data-target="#delete_{{ item.id }}">Delete
+                </button>
+                {% include 'inv-includes/delInventory.html' %}
+            </td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>

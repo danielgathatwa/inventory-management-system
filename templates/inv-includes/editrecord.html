@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div class="modal fade" id="edit_{{ item.id }}" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Record {{ item.id }}
+                    : {{ item.invname }} {{ item.invtype }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/edit-inv" method="post">
+                    <div class="form-group">
+                        <input name="inventory_id" type="hidden" class="form-control" id="inventory_id"
+                               placeholder="Enter inventory name" value="{{ item.id }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inventoryNameInput">Name</label>
+                        <input name="name" type="text" class="form-control" id="inventoryNameInput"
+                               placeholder="Enter inventory name" value="{{ item.invname }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select name="type" class="form-control" id="type">
+                            <option value="{{ item.invtype }}" selected>{{ item.invtype }}</option>
+                            <option value="product">Product</option>
+                            <option value="service">Service</option>
+                        </select>
+                        <div class="form-group">
+                            <label for="buyingprice">Buying Price</label>
+                            <input name="bp" type="text" class="form-control" id="buyingprice"
+                                   placeholder="Enter buying price" value="{{ item.bp }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="sellingprice">Selling Price</label>
+                            <input name="sp" type="text" class="form-control" id="sellingprice"
+                                   placeholder="Enter selling price" value="{{ item.sp }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="stock">Stock</label>
+                            <input name="stock" type="text" class="form-control" id="stock"
+                                   placeholder="Enter stock" value="{{ item.stock }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="reorder">reorder Point</label>
+                            <input name="rp" type="text" class="form-control" id="reorder"
+                                   placeholder="Enter stock" value="{{ item.rp }}">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">submit</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>

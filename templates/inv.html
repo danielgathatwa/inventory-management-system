@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Inventory{% endblock title %}
+{% block content %}
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#addInventory">
+        Add Inventory
+    </button>
+    <br>
+    <hr>
+    {% include 'inv-includes/addInventory.html' %}
+    {% include 'inv-includes/alert.html' %}
+    {% include 'inv-includes/inv_mastertable.html' %}
+
+
+{% endblock content %}
