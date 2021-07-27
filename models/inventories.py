@@ -1,4 +1,12 @@
-from app import db
+from re import I
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from configs import Development
+
+app = Flask(__name__)
+app.config.from_object(Development)
+
+db = SQLAlchemy(app)
 
 
 class InventoryModel(db.Model):
